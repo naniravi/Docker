@@ -8,6 +8,7 @@ Clone this project
 https://github.com/MithunTechnologiesDevOps/maven-web-application
 
 Install maven
+---------------------
 
 
 
@@ -15,7 +16,53 @@ FROM tomcat:8.0.20-jre8
 COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
 
 
-Create Image
+Install Docker
+------------------
+
+https://docs.docker.com/engine/install/ubuntu/
+https://get.docker.com/
+for practice we can use below command 
+$sudo curl -fsSL get.docker.com| /bin/bash 
+
+ubuntu
+---------
+$ sudo apt install docker.io -y 
+
+Make sure docker demon is started or not?
+ $ ps -ef | grep "dockerd"
+
+See the docker status
+$ sudo service docker status
+
+$ sudo docker version
+
+Iam using Ubuntu user to the docker group
+$ sudo usermod -aG docker ubuntu
+
+$ exit 
+
+
+
+
+
+linux
+-------
+
+$ sudo apt install docker.io -y 
+
+
+
+docker build -t <Image> <Docker Build Context>
+
+t=> tag
+
+Command to create Docker image:
+==================================
+
+$ docker build -t naniravi/maven-web-app:1 .
+
+.=> .Represnt Current Working Directory 
+
 
 
 
