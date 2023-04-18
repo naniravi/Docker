@@ -1,0 +1,22 @@
+
+Duild Server 
+=======================
+
+
+Clone this project
+
+https://github.com/MithunTechnologiesDevOps/maven-web-application
+
+Install maven
+
+
+
+FROM tomcat:8.0.20-jre8
+COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
+
+
+Create Image
+
+
+
+
