@@ -1,1 +1,89 @@
+See how many images
+======================= 
+
+$ docker images 
+create docker image
+============================== 
+
+docker build -t dockerhandson/maven-web-app:1 .
+Remove Docker Image
+===========================
+docker rmi dockerhandson/maven-web-app:1
+
+To see the docker layers of the image 
+=======================================
+docker history <Image ID>
+$ docker history 9c708c62cefb
+
+
+Push docker image to public repo 
+==================================
+
+$ docker push naniravi/maven-web-app:1
+
+Command to Authenticate in docker hub
+-=============================
+
+$ docker login -u <username> -p <password> <RegestryURL>
+
+
+
+In Case of Nexus 
+==================
+docker build -t 172.31.90:8083/mavenweb-app:1 .
+
+docker build  -t nexus.tcs.com/maven-web-app:1 .
+
+for Authenticate in nexus
+===========================
+
+docker login -u admin -p admin123  172.31.90:8083
+
+docker login -u admin -p admin123  nexus.tcs.com
+
+==========================================================================================
+
+
+we have Take another server
+-------------------------------------
+
+Install docker 
+create docker user to the ubuntu
+
+
+Create container 
+=============================
+
+docker create --name <Container Name> <Iamge Name>
+
+docker start <Container ID /Name>
+
+Directly use Docker Run
+--------------------------------
+
+$ docker run --name <Container Name > <IamgeName>
+
+to do the port forward:
+==================================
+
+docker run --name mavenwebapp -p<Hostport: containerport> dockerhandson/maven-web-app:1. 
+
+docker run -d --name mavenwebapp -p 8080:8080 naniravi/maven-web-app:1 . ----> detached mode ===> Container mode should be in detached mode
+
+
+$ docker run -d --name mavenwebapp05 -p 8080:8080 naniravi/maven-web-app:1 .
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 
