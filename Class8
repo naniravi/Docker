@@ -1,0 +1,93 @@
+Docker File:
+=================
+
+
+Docker File---> Image ---> Container 
+
+Docker file---> It a normal text file which contains set of Docker DSL(Domine Specific languages) Instructions/Keyword.
+
+
+Docker Daemon will process these instructions from top to bottom in order to create an image 
+
+
+Sample Docker File
+======================
+
+
+FROM tomcat:8.0.20-jre8 
+COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
+
+
+
+From==>Using FROm instruction we can define base image to create our own image 
+On the top of base iamge our layers get added
+
+
+
+
+MAINTAINER==> Who is owner/Maintainer of Docker Image 
+EG:
+----
+MAINTAINER==> Please clear my 1st Round Ravidevops893@gmail.com
+
+
+COPY ==> copy files to source to destination 
+EG:
+----
+COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
+
+COPY . . ==> What ever file or folders that are present in build contect that will be moved to current wroking directory 
+
+AND
+
+RUN
+
+CMD
+
+ENTRY POINT
+
+WORKDIR
+
+ENV
+
+ARG
+
+LABEL
+
+USER
+
+VOLUME
+
+
+
+
+FROM <Registry/RepoName:tag>
+
+ex:
+
+FROM tomcat:8.0.20-jre8 --->DockerHUb Registry
+
+FROM nexus.tcs.com/tomcat:8.0.20-jre8----> Nexus Registry
+
+
+Can I have multiple Docker images?
+
+It is possibe that is called Muti stage docker file
+
+Eg:
+FROM openjdk:8.0
+FROM tomcat: 8.0.20-jre8
+COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war 
+
+
+
+
+
+
+
+
+
+
+
+
+
