@@ -7,3 +7,18 @@ RUN echo "Run One"
 RUN mkdir -p /opt/test
 RUN echo "RUN Two"
 
+===================================
+
+FROM ubuntu
+MAINTAINER Ravi ravikumar.123@gmail.com
+RUN apt update -y && apt install git  curl wget -y
+RUN echo "Run One Updated"
+RUN mkdir -p /opt/test
+RUN echo "RUN Two"
+RUN echo "RUN"
+CMD ["echo" , "Welcome to CMD" ]
+RUN echo "RUN Three"
+CMD ["date"]
+RUN echo "RUN Four"
+
+
