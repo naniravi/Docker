@@ -27,3 +27,76 @@ CMD ["date"]
 RUN echo "RUN Four"
 
 
+Entry Point:
+====================
+
+RUN CMD ENTRYPOINT ==>
+
+
+Entry point we can use execute some command or Script 
+EP also gets executed wnile starting the cotainer 
+
+Diff b/w CMD Entry Point?
+==============================
+
+CMD will be overridden 
+
+Entry Point will not be overriddern 
+
+
+
+
+
+Shell Form 
+=============
+
+
+RUN <command> <arg1> <arg2>
+
+ex:
+
+RUN mkdir -p /opt/test
+RUN apt  install git curl -y 
+
+CMD <command> <arg1> <arg2>
+
+
+CMD echo "WelcomeOne"
+CMD sh catalina.sh run 
+CMD java -jar  app.jar
+
+ENTRYPOINT <command> <arg1> <arg2>
+
+ENTRYPOINT echo "WelcomeOne"
+ENTRYOINT sh catalina.sh run
+ENTRYPOINT java -jar app.jar
+
+
+Ececutable Form :
+===================
+
+RUN ["commad/exectable", "arg1" "arg2"]
+
+RUN ["mkdir",  "-p",  "/opt/test"]
+RUN ["apt" , "install",  "git", "curl, "-y"]
+
+
+ 
+
+
+CMD ["commad/exectable", "arg1" "arg2"]
+
+CMD ["echo",  "WelcomeOne"]
+CMD ["sh",  "catalina.sh",  "run" ]
+CMD ["java", "-jar",  "app.jar"]  
+
+
+ENTRYPOINT ["commad/exectable", "arg1" "arg2"]
+
+ENTRYPOINT ["echo", "WelcomeOne"]
+ENTRYOINT ["sh",  "catalina.sh",  "run"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+
+
+
