@@ -1,1 +1,40 @@
 
+USER ==> we need to create User when we are creating docker file by default ROOT user will be Assigned 
+
+EXPOSE
+
+VOLUME
+
+ON BUILD
+===============
+ARG imagetag=latest
+FROM ubuntu:$imagetag
+MAINTAINER Ravi ravikumar.123@gmail.com
+RUN apt update -y && apt install git  curl wget -y
+ENV PROJECT_HOME /app
+WORKDIR $PROJECT_HOME
+ENV TEST testingenv
+ENV TEST test
+RUN echo "Run One"
+RUN echo "RUN Three"
+ONBUILD echo "Test OnBuild"
+CMD ["pwd"]
+
+
+When you upate ONBUILD instruction in Docker file it will not Execute 
+
+If you take base image of image tag   at that time it will execute
+
+ex:FROM imageone:latest
+RUN echo "Testing"
+
+
+
+
+
+
+
+$ docker volume ls
+
+
+
