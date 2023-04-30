@@ -1,1 +1,57 @@
 
+Shell Form 
+=============
+
+
+RUN <command> <arg1> <arg2>
+
+ex:
+
+RUN mkdir -p /opt/test
+RUN apt  install git curl -y 
+
+RUN sh test.sh
+
+CMD <command> <arg1> <arg2>
+
+
+CMD sh cataline.sh run
+CMD java -jar  app.jar
+CMD node app.js
+CMD py app.py
+
+ENTRYPOINT <command> <arg1> <arg2>
+
+ENTRYPOINT sh cataline.sh run
+ENTRYPOINT java -jar  app.jar
+ENTRYPOINT node app.js
+ENTRYPOINT py app.py
+
+
+
+Ececutable Form :
+===================
+
+RUN ["commad/exectable", "arg1" "arg2"]
+
+RUN ["mkdir",  "-p",  "/opt/test"]
+RUN ["apt" , "install",  "git", "curl, "-y"]
+
+
+ 
+
+
+CMD ["commad/exectable", "arg1" "arg2"]
+
+CMD ["sh" "cataline.sh","run"]
+CMD ["java", "-jar", "app.jar"]
+CMD ["node", "app.js"]
+CMD ["py", "app.py"]
+
+ENTRYPOINT ["commad/exectable", "arg1" "arg2"]
+
+ENTRYPOINT ["sh" "cataline.sh","run"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["node", "app.js"]
+ENTRYPOINT ["py", "app.py"] 
+
