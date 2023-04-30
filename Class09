@@ -7,6 +7,11 @@ RUN echo "Run One"
 RUN mkdir -p /opt/test
 RUN echo "RUN Two"
 
+
+Create Image with out Repo/Registry
+
+$ docker build -t imageone . 
+
 ===================================
 
 FROM ubuntu
