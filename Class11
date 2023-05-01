@@ -49,6 +49,29 @@ Deployment Server
  docker run -d --name nodeapp -p 7070:9981 naniravi/nodejs-app:latest
 
 
+Python Project
+
+Build Server
+-------------
+
+git clone https://github.com/DevOpsEngineer-test/Python-Flask-RestAPI.git
+
+
+docker build -t naniravi/python-project:1 .
+
+docker push naniravi/python-project:1
+
+
+Deployment Server
+-----------------
+
+docker run -d --name pythoon -p 5000:5000  naniravi/python-project:1
+
+
+
+How to Rename tag in 11 th video 
+
+
 
 
 
