@@ -21,4 +21,19 @@ COPY --from=build /app/target/maven-web-app*.war /usr/local/tomcat/webapps/maven
 
 
 docker run -d --name multistage -p 7070:9981 naniravi/dmultistage:1
+
+
+
+ECR
+============
+
+Step1: Click Repository
+Give any Repo name
+
+take the URI of Private Repo
+
+Step2: 
+$ docker build -t 574948534640.dkr.ecr.ap-south-1.amazonaws.com/maven-web-applica:1 .
+ 
+$ aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 574948534640.dkr.ecr.ap-south-1.amazonaws.com
  
