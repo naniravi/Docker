@@ -29,6 +29,26 @@ ex:FROM imageone:latest
 RUN echo "Testing"
 
 
+Deploying NodeJS App
+============================
+
+Build Server:
+
+git clone https://github.com/DevOpsEngineer-test/nodejs-app-mss.git
+ docker build -t naniravi/nodejs-app .
+  252  docker images
+  253  docker inspect 8153687d09dc
+  254  docker images
+  255  docker push naniravi/nodejs-app:1
+  256  docker push naniravi/nodejs-app:latest
+
+
+Deployment Server
+===================
+
+ docker run -d --name nodeapp -p 7070:9981 naniravi/nodejs-app:latest
+
+
 
 
 
