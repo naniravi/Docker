@@ -6,5 +6,40 @@ Docker Volumes
 
 2. git clone https://github.com/DevOpsEngineer-test/spring-boot-mongo-docker.git
 
+ cd spring-boot-mongo-docker/
 
+$ mvn clean package
+
+we will get war file 
+
+
+then Build Docker Image 
+
+
+
+docker run -d --name mongodb  -e MONGO_INITDB_ROOT_USERNAME=devdb -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 mongo
+
+
+
+docker run -d --name springapp -p 8080:8080 -e MONGO_DB_HOSTNAME=mongodb -e MONGO_DB_USERNAME=devdb -e MONGO_DB_PASSWORD=devdb@123  naniravi/spring-boot-mango 
+
+
+
+docker run -d --name mongodb --network springappbridge -e MONGO_INITDB_ROOT_USERNAME=devdb -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 mongo
+
+
+
+docker run -d --name springapp --network springappbridge -p 8080:8080 -e MONGO_DB_HOSTNAME=mongodb -e MONGO_DB_USERNAME=devdb -e MONGO_DB_PASSWORD=devdb@123  naniravi/spring-boot-mango:1
+
+
+
+docker rm -f $(docker ps -aq) ==> remove all containers 
+
+
+docker rm -f $(docker image q)==> remove all images  
+
+
+ps -q
+
+df -h 
  
