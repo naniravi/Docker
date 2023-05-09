@@ -36,6 +36,16 @@ docker run -d --name springapp --network springappbridge -p 8080:8080 -e MONGO_D
 docker rm -f $(docker ps -aq) ==> remove all containers 
 
 
+
+Intentially deleting springapp conainer & again I will create data will not loss
+
+
+
+
+
+
+
+
 docker rm -f $(docker image q)==> remove all images  
 
 
