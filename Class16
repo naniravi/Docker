@@ -1,0 +1,17 @@
+Volumes
+===============
+
+
+BindMount
+==============
+ 
+
+
+mkdir mongo
+
+
+$ docker run -d --name mongodb -v /home/ubuntu/mongo:/data/db  --network springappbridge -e MONGO_INITDB_ROOT_USERNAME=devdb -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 mongo
+
+$ docker rm -f mongodb
+
+$  docker exec mongodb ls /data/db
