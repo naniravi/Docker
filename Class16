@@ -15,3 +15,10 @@ $ docker run -d --name mongodb -v /home/ubuntu/mongo:/data/db  --network springa
 $ docker rm -f mongodb
 
 $  docker exec mongodb ls /data/db
+
+
+Installed jenkin in Container & attached Volumes
+======================================================
+
+docker run -d --name jenkins -p 7070:8080 -v jenkinsvol:/var/jenkins_home jenkins/jenkins:lts
+
