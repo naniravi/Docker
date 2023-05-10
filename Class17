@@ -1,0 +1,18 @@
+
+
+Rexray plugin 
+
+
+docker plugin install rexray/ebs EBS_ACCESSKEY=AKIAYLXM2NFYARFXREOF EBS_SECRETKEY=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
+
+
+docker run -d --name mongodb -v mongoebsvol:/data/db --network springappbridge mongo
+
+
+we have differnt types of volume 
+
+local volume 
+
+Bind Mounts 
+
+we can install extrenal volume by installing plugins also like Rexray plugin
